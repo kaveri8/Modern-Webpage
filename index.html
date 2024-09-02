@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e3f0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container {
+    width: 80%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 100px 1fr 50px;
+}
+
+#header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+#dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.goal {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.goal-content {
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+            <h1>Your Daily Routine</h1>
+            <p>Keep track of your daily tasks and goals.</p>
+        </header>
+        
+        <main id="dashboard">
+            
+            <div id="notes" class="goal">
+                <h2>Notes</h2>
+                <div class="widget-content">
+                    <textarea placeholder="Jot down your ideas..."></textarea>
+                </div>
+            </div>
+            
+            <div id="goals" class="goal">
+                <h2>Daily Goals</h2>
+                <ul>
+                    <li><input type="checkbox"> Finish the concept</li>
+                    <li><input type="checkbox"> Practice DSA</li>
+                    <li><input type="checkbox"> Reading book 1hr </li>
+                    <li><input type="checkbox"> Revise the whole day topics </li>
+                </ul>
+                </div>
+            <div id="clock" class="goal">
+                <h2>Current Time</h2>
+                <div id="time"></div>
+            </div>
+        </main>
+        
+        <footer id="footer">
+            <p>&copy; 2024 kaveri</p>
+        </footer>
+    </div>
+
+    <script>
+        function updateTime() {
+    const time = document.getElementById('time');
+    const now = new Date();
+    time.innerHTML = now.toLocaleTimeString();
+}
+setInterval(updateTime, 1000);
+
+    </script>
+</body>
+</html>
